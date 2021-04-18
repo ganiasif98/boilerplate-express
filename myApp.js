@@ -3,11 +3,16 @@ var app = express();
 
 console.log("hello world");
 
+//app.get("/", function(req, res) {
+    //res.send("Hello Express");
+//});
+  
 app.get("/", function(req, res) {
-    res.send("Hello Express");
+    res.sendFile(__dirname + "/views/index.html");
 });
   
-
+  
+app.use("/public", express.static(__dirname + "/public"));
 
 
 
